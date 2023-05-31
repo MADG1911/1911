@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_toEndOf="@+id/iv_cover">-->
+    <ImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="380dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+
+        android:layout_gravity="center_horizontal"
+
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/food"
+            android:layout_centerVertical="true"
+            app:tint="@color/text_color2" />
+    <TextView
+        android:id="@+id/tv_name"
+        android:gravity="start|center_vertical"
+android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Name"
+        android:textSize="24dp"
+        android:layout_marginTop="10dp"
+       android:textColor="@color/text_color1"
+        android:layout_centerVertical="true"
+       android:layout_marginLeft="30dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:src="@drawable/price" />
+
+        <TextView
+
+android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/text_color1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      >
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/time"
+            android:layout_centerVertical="true"
+             />
+        <TextView
+          android:id="@+id/tv_time"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/text_color1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"/>
+    </RelativeLayout>
+</LinearLayout>
