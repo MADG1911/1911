@@ -3,96 +3,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:orientation="vertical">
 
-    <!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_toEndOf="@+id/iv_cover">-->
-    <ImageView
+        <LinearLayout
+
+android:layout_gravity="start"
+
+            android:padding="15dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+     >
+<FrameLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/rounded_button2">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+
+        android:layout_gravity="center"
+      android:layout_marginBottom="20sp"
+        android:foregroundGravity="top"
+        android:src="@drawable/food_example"
+
+        app:civ_border_width="4dp"
+        app:civ_border_color="@color/text_color2"
+
         android:id="@+id/iv_cover"
-        android:layout_width="380dp"
-        android:layout_height="150dp"
-        android:scaleType="fitXY"
-
-        android:layout_gravity="center_horizontal"
-
         />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        >
-        <ImageView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/food"
-            android:layout_centerVertical="true"
-            app:tint="@color/text_color2" />
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="50dp">
+
     <TextView
         android:id="@+id/tv_name"
         android:gravity="start|center_vertical"
 android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="Food Name"
-        android:textSize="24dp"
-        android:layout_marginTop="10dp"
-       android:textColor="@color/text_color1"
-        android:layout_centerVertical="true"
-       android:layout_marginLeft="30dp"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
+        android:textSize="15dp"
 
-        <ImageView
+       android:textColor="@color/text_color2"
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+       android:layout_marginLeft="20dp"/>
 
-            android:src="@drawable/price" />
 
         <TextView
 
 android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="60"
-            android:textSize="18dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/text_color1"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="30dp"/>
-    </RelativeLayout>
+            android:text="60.00"
+            android:textSize="10dp"
+      android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/text_color2"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-      >
-        <ImageView
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/time"
-            android:layout_centerVertical="true"
-             />
-        <TextView
-          android:id="@+id/tv_time"
+</FrameLayout>
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="15"
-            android:textSize="16dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/text_color1"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="30dp"/>
-    </RelativeLayout>
+</LinearLayout>
 </LinearLayout>
