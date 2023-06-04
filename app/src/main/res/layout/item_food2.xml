@@ -25,11 +25,11 @@ android:layout_gravity="center"
         android:layout_width="125dp"
         android:layout_height="125dp"
 
-        android:layout_gravity="center"
-      android:layout_marginBottom="15sp"
+        android:layout_gravity="start |center"
+
         android:foregroundGravity="top"
         android:src="@drawable/food_example"
-
+android:layout_marginLeft="20dp"
         app:civ_border_width="4dp"
         app:civ_border_color="@color/text_color2"
 
@@ -40,7 +40,8 @@ android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="bottom">
+      android:layout_gravity="center"
+    android:layout_marginLeft="55sp">
 
     <TextView
         android:id="@+id/tv_name"
@@ -53,7 +54,7 @@ android:textStyle="bold"
 
        android:textColor="@color/text_color2"
         android:layout_centerVertical="true"
-       android:layout_marginLeft="30dp"/>
+       android:layout_marginLeft="12dp"/>
 
 
         <TextView
@@ -61,11 +62,13 @@ android:textStyle="bold"
 android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="60.00"
+            android:text="60.00$"
             android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="7dp"
             android:layout_marginBottom="10dp"
             android:textColor="@color/text_color2"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="12dp"/>
     </LinearLayout>
 
 

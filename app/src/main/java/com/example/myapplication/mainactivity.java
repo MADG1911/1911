@@ -60,9 +60,7 @@ private void init(){
     LinearLayoutManager layoutManager = new LinearLayoutManager(this);
     layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
     rvfood2.setLayoutManager(layoutManager);
-
     List<food2> foods2 = new ArrayList<>();
-
     foods2.add(new food2("MAO", 6f, 50.00f, "https://images7.alphacoders.com/977/977986.jpg"));
     foods2.add(new food2("pizza", 66f, 56.00f, "https://images.immediate.co.uk/production/volatile/sites/30/2015/02/Top-10-foods-to-try-in-Spain-1d2b4ef.jpg"));
     foods2.add(new food2("kabab", 6f, 50.00f, "https://assets.lightspeedhq.com/img/2019/07/8aac85b2-blog_foodpresentationtipsfromtopchefs.jpg"));
