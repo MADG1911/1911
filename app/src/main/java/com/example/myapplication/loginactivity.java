@@ -50,11 +50,23 @@ btnsingin.setOnClickListener(new View.OnClickListener() {
         editor.putBoolean("is_login",true);
         editor.apply();
 
+
         Intent intent = new Intent(loginactivity.this, mainactivity.class);
         startActivity(intent);
         finish();
 
+
     }
 });
+        ImageView Imageback = findViewById(R.id.Back_image);
+        Imageback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(loginactivity.this, AfterSplash.class);
+                startActivity(intent);
+            }
+
+
+        });
     }
 }

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/text_color2">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/text_color2"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp">
+   <ImageView
+       android:id="@+id/Back_image"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:src="@drawable/arrow"
+       android:tint="@color/text_color4"/>
+
+   <com.google.android.material.imageview.ShapeableImageView
+       android:layout_width="match_parent"
+       android:layout_height="370dp"
+       android:src="@drawable/food_example"
+       android:adjustViewBounds="true"
+           app:shapeAppearance="@style/round2"
+
+       android:scaleType="fitXY"/>
+
+
+
+   <TextView
+
+       android:layout_marginTop="20dp"
+       android:layout_width="wrap_content"
+       android:textStyle="bold"
+
+       android:textColor="@color/text_color4"
+       android:layout_height="wrap_content"
+      android:text="Avocado salad"
+      android:textSize="25dp"/>
+   <TextView
+
+       android:layout_marginTop="30dp"
+       android:layout_width="wrap_content"
+       android:textStyle="bold"
+       android:textColor="@color/text_color1"
+       android:layout_height="wrap_content"
+       android:text="Bright flavor and bold bites are what make this healthy quinoa salad with chickpeas, black beans, mango and avocado in a limey dressing an easy side"
+
+       android:textSize="18dp"/>
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_marginTop="20dp">
+
+      <TextView
+
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+
+          android:text="Total Price:"
+          android:textColor="@color/text_color4"
+          android:textSize="22dp"
+          android:textStyle="bold"/>
+
+      <TextView
+
+
+          android:layout_width="wrap_content"
+          android:textStyle="bold"
+          android:textColor="@color/text_color1"
+          android:layout_height="wrap_content"
+          android:text=" 20.00$"
+          android:textSize="22dp"/>
+   </LinearLayout>
+      />
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_marginTop="20dp">
+   <TextView
+
+
+       android:layout_width="wrap_content"
+       android:textStyle="bold"
+       android:textColor="@color/text_color4"
+       android:layout_height="wrap_content"
+       android:text="Delivery Time"
+       android:textSize="22dp"
+
+       />
+   <ImageView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:src="@drawable/time"
+     android:layout_marginLeft="10dp"
+       android:tint="@color/text_color1"
+       android:layout_gravity="bottom"
+       android:layout_marginBottom="3dp"/>
+      <TextView
+
+          android:layout_marginLeft="3dp"
+          android:layout_width="wrap_content"
+          android:textStyle="bold"
+          android:textColor="@color/text_color1"
+          android:layout_height="wrap_content"
+          android:text="10"
+          android:textSize="22dp"/>
+      <TextView
+
+          android:layout_marginLeft="3dp"
+          android:layout_width="wrap_content"
+          android:textStyle="bold"
+          android:textColor="@color/text_color1"
+          android:layout_height="wrap_content"
+          android:text="min"
+          android:textSize="22dp"/>
+
+   </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>

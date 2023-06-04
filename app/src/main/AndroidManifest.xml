@@ -32,6 +32,17 @@
         <activity
             android:name=".mainactivity"
             android:exported="true"/>
+        <activity
+            android:name=".AfterSplash"
+            android:exported="true"/>
+        <activity
+            android:name=".Signuplayout"
+            android:exported="true"/>
+        <activity
+            android:name=".Food_Example"
+            android:exported="true"/>
+
+
 
 
 

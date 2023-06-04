@@ -40,7 +40,6 @@ bind(holder,foods.get(position));
 void bind (Foodviewholder holder, food foood){
     holder.tvNAME.setText(foood.getFood_name());
     holder.TvPrice.setText(String.valueOf(foood.getPrice()));
-    holder.TVTime.setText(String.valueOf(foood.getTime()));
     Glide.with(holder.itemView.getContext()).load(foood.getImageUrl()).apply(RequestOptions.bitmapTransform(new RoundedCorners(14))).into(holder.ivCover);
 
 
@@ -61,7 +60,7 @@ void bind (Foodviewholder holder, food foood){
 
          tvNAME = itemView.findViewById(R.id.tv_name);
          TvPrice =  itemView.findViewById(R.id.tv_price);
-         TVTime = itemView.findViewById(R.id.tv_time);
+
          ivCover = itemView.findViewById(R.id.iv_cover);
         }
     }

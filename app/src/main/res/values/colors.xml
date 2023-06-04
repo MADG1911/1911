@@ -13,7 +13,8 @@
     <color name="orange">#f7ad19</color>
 
     <color name="text_color3">#1A3B70</color>
-    <color name="text_color1">#eef4ed</color>
+    <color name="text_color1">#fff4e0</color>
     <color name="text_color2">#f7ad19</color>
+    <color name="text_color4">#4b4b4b</color>
 
 </resources>

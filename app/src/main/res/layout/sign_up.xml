@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fasttt">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/Back_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="20dp"
+            android:tint="@color/text_color2"/>
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_gravity="center"
+       android:gravity="center"
+       android:paddingTop="34dp"
+       android:paddingLeft="25dp"
+       android:paddingRight="25dp">
+<TextView
+    android:paddingTop="45sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Create"
+    android:textSize="40dp"
+    android:textColor="@color/white"
+    android:textStyle="bold"
+    />
+       <TextView
+
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="an account"
+           android:textColor="@color/white"
+           android:textStyle="bold"
+           android:textSize="40dp"
+           />
+
+
+       <FrameLayout
+             android:paddingTop="50sp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+
+             <Button
+                 android:id="@+id/face11"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="10dp"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginEnd="10dp"
+                 android:layout_marginBottom="10dp"
+                 android:background="@drawable/button_2"
+                 android:drawableStart="@drawable/face2"
+                 android:drawableLeft="@drawable/face2"
+                 android:onClick="onClick"
+                 android:padding="10dp"
+                 android:paddingStart="20dp"
+                 android:paddingEnd="20dp"
+                 android:text="Continue with Facebook"
+
+                 android:textAllCaps="false"
+                 android:textColor="#ffffff"
+                 android:textSize="20sp"
+                 android:textStyle="bold" />
+
+
+         </FrameLayout>
+       <FrameLayout
+
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+
+           <Button
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="10dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginEnd="10dp"
+               android:layout_marginBottom="10dp"
+               android:background="@drawable/button_2"
+               android:drawableStart="@drawable/google2"
+               android:drawableLeft="@drawable/google2"
+               android:onClick="onClick"
+               android:padding="10dp"
+               android:paddingStart="20dp"
+               android:paddingEnd="20dp"
+               android:text="Continue with Google"
+
+               android:textAllCaps="false"
+               android:textColor="#ffffff"
+               android:textSize="20sp"
+               android:textStyle="bold" />
+
+
+       </FrameLayout>
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+
+           <Button
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="10dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginEnd="10dp"
+               android:layout_marginBottom="10dp"
+               android:background="@drawable/button_2"
+               android:drawableStart="@drawable/twitter2"
+               android:drawableLeft="@drawable/twitter2"
+               android:onClick="onClick"
+               android:padding="10dp"
+               android:paddingStart="20dp"
+               android:paddingEnd="20dp"
+               android:text="Continue with Twitter"
+
+               android:textAllCaps="false"
+               android:textColor="#ffffff"
+               android:textSize="20sp"
+               android:textStyle="bold" />
+
+
+       </FrameLayout>
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+
+           <Button
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="10dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginEnd="10dp"
+               android:layout_marginBottom="10dp"
+               android:background="@drawable/button_2"
+               android:drawableStart="@drawable/email2"
+               android:drawableLeft="@drawable/email2"
+               android:onClick="onClick"
+               android:padding="10dp"
+               android:paddingStart="20dp"
+               android:paddingEnd="20dp"
+               android:text="Sign Up with Email"
+
+               android:textAllCaps="false"
+               android:textColor="#ffffff"
+               android:textSize="20sp"
+               android:textStyle="bold" />
+
+
+       </FrameLayout>
+
+
+
+
+         </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
