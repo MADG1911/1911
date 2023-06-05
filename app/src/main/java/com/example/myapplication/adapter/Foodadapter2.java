@@ -20,7 +20,7 @@ import java.util.List;
 
 public class Foodadapter2 extends RecyclerView.Adapter<Foodadapter2.Foodviewholder2>{
     List<food2> foods2;
-    public Foodadapter2(List<food2> food2s){
+    public Foodadapter2(List<food2> foods2){
       this.foods2 = foods2;
 
     }

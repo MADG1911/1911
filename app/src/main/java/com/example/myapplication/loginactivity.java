@@ -54,6 +54,8 @@ btnsingin.setOnClickListener(new View.OnClickListener() {
         Intent intent = new Intent(loginactivity.this, mainactivity.class);
         startActivity(intent);
         finish();
+        AfterSplash AF = new AfterSplash() ;
+        AF.finish();
 
 
     }
@@ -64,6 +66,8 @@ btnsingin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(loginactivity.this, AfterSplash.class);
                 startActivity(intent);
+
+
             }
 
 

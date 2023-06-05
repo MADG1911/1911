@@ -11,9 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.adapter.CategoryAdapter;
 import com.example.myapplication.adapter.Foodadapter;
 import com.example.myapplication.adapter.Foodadapter2;
+import com.example.myapplication.adapter.Foodadapter3;
 import com.example.myapplication.model.Categoryy;
 import com.example.myapplication.model.food;
 import com.example.myapplication.model.food2;
+import com.example.myapplication.model.food3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,9 +69,23 @@ private void init(){
     foods2.add(new food2("joje", 69f, 50.00f, "https://www.healthfitnessrevolution.com/wp-content/uploads/2016/09/iStock-119483507.jpg"));
     rvfood2.setAdapter(new Foodadapter2((foods2)));
 
+
+        RecyclerView rvfood3 = findViewById(R.id.rv_food3);
+        LinearLayoutManager layoutManager1 = new LinearLayoutManager(this);
+        layoutManager1.setOrientation(LinearLayoutManager.VERTICAL);
+        rvfood3.setLayoutManager(layoutManager1);
+        List<food3> foods3 = new ArrayList<>();
+        foods3.add(new food3("MAO", 6f, 50.00f, "https://images7.alphacoders.com/977/977986.jpg"));
+        foods3.add(new food3("pizza", 66f, 56.00f, "https://images.immediate.co.uk/production/volatile/sites/30/2015/02/Top-10-foods-to-try-in-Spain-1d2b4ef.jpg"));
+        foods3.add(new food3("kabab", 6f, 50.00f, "https://assets.lightspeedhq.com/img/2019/07/8aac85b2-blog_foodpresentationtipsfromtopchefs.jpg"));
+        foods3.add(new food3("joje", 69f, 50.00f, "https://www.healthfitnessrevolution.com/wp-content/uploads/2016/09/iStock-119483507.jpg"));
+        rvfood3.setAdapter(new Foodadapter3((foods3)));
+
     RecyclerView rvfood = findViewById(R.id.rv_food);
-        rvfood.setLayoutManager(new LinearLayoutManager(this));
-        List<food> foods = new ArrayList<>();
+    LinearLayoutManager layoutManager2 = new LinearLayoutManager(this);
+    layoutManager2.setOrientation(LinearLayoutManager.VERTICAL);
+    rvfood.setLayoutManager(layoutManager2);
+    List<food> foods = new ArrayList<>();
         foods.add(new food("khorak", 6f, 50.00f, "https://images7.alphacoders.com/977/977986.jpg"));
         foods.add(new food("pizza", 66f, 56.00f, "https://images.immediate.co.uk/production/volatile/sites/30/2015/02/Top-10-foods-to-try-in-Spain-1d2b4ef.jpg"));
         foods.add(new food("kabab", 6f, 50.00f, "https://assets.lightspeedhq.com/img/2019/07/8aac85b2-blog_foodpresentationtipsfromtopchefs.jpg"));
@@ -89,7 +105,6 @@ private void init(){
 
 
     }
-
 
 
 
