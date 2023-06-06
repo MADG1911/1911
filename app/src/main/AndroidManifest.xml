@@ -16,7 +16,7 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31" >
         <activity
-            android:name=".spashactivity"
+            android:name=".SplashActivity"
             android:exported="true">
 
 
@@ -27,19 +27,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".loginactivity"
+            android:name=".LoginActivity"
             android:exported="true"/>
         <activity
-            android:name=".mainactivity"
+            android:name=".MainActivity"
             android:exported="true"/>
         <activity
             android:name=".AfterSplash"
             android:exported="true"/>
         <activity
-            android:name=".Signuplayout"
+            android:name=".SignupLayout"
             android:exported="true"/>
         <activity
-            android:name=".Food_Example"
+            android:name=".FoodDetailActivity"
             android:exported="true"/>
 
 

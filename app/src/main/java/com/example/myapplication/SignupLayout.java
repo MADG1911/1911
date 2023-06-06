@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
-public class Signuplayout extends Activity {
+public class SignupLayout extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +17,7 @@ public class Signuplayout extends Activity {
         Imageback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Signuplayout.this, AfterSplash.class);
+                Intent intent = new Intent(SignupLayout.this, AfterSplash.class);
                 startActivity(intent);
             }
 

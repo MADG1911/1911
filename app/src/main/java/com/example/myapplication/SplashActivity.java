@@ -8,7 +8,7 @@ import android.os.Handler;
 
 import androidx.annotation.Nullable;
 
-public class spashactivity extends Activity {
+public class SplashActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,7 @@ public class spashactivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(spashactivity.this, mainactivity.class);
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 // کدی که می خواهید با تاخیر اجرا شود
@@ -41,7 +41,7 @@ public class spashactivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(spashactivity.this,AfterSplash.class);
+                Intent intent = new Intent(SplashActivity.this,AfterSplash.class);
                 startActivity(intent);
                 finish();
                 // کدی که می خواهید با تاخیر اجرا شود

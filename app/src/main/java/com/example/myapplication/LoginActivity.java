@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.Log;
-import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +12,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
-public class loginactivity extends Activity {
+public class LoginActivity extends Activity {
     boolean isshowpassword = false;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,7 +49,7 @@ btnsingin.setOnClickListener(new View.OnClickListener() {
         editor.apply();
 
 
-        Intent intent = new Intent(loginactivity.this, mainactivity.class);
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
         AfterSplash AF = new AfterSplash() ;
@@ -64,7 +62,7 @@ btnsingin.setOnClickListener(new View.OnClickListener() {
         Imageback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(loginactivity.this, AfterSplash.class);
+                Intent intent = new Intent(LoginActivity.this, AfterSplash.class);
                 startActivity(intent);
 
 

@@ -5,11 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-public class Food_Example extends Activity {
+public class FoodDetailActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +18,7 @@ public class Food_Example extends Activity {
         Imageback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Food_Example.this, mainactivity.class);
+                Intent intent = new Intent(FoodDetailActivity.this, MainActivity.class);
                 startActivity(intent);
             }
 

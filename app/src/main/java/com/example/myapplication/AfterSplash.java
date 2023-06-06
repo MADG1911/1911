@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +21,7 @@ public class AfterSplash extends Activity {
 
                 public void onClick(View view) {
 
-                    Intent intent = new Intent(AfterSplash.this, loginactivity.class);
+                    Intent intent = new Intent(AfterSplash.this, LoginActivity.class);
                     startActivity(intent);
                 }
             });
@@ -32,7 +31,7 @@ public class AfterSplash extends Activity {
        signupsplash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AfterSplash.this, Signuplayout.class);
+                Intent intent = new Intent(AfterSplash.this, SignupLayout.class);
                 startActivity(intent);
                }
 

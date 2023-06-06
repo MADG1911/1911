@@ -1,12 +1,12 @@
 package com.example.myapplication.model;
 
-public class food {
+public class Food {
     private String food_name;
     private Float time;
     private Float price;
     private String imageUrl;
 
-    public food(String food_name, Float time, Float price, String imageUrl) {
+    public Food(String food_name, Float time, Float price, String imageUrl) {
         this.food_name = food_name;
         this.time = time;
         this.price = price;
