@@ -6,6 +6,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/text_color1">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fl_container">
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -74,10 +79,6 @@
         tools:itemCount="2"
         tools:listitem="@layout/item_food" />
 
-</LinearLayout>
-
-
-
-
-
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout>

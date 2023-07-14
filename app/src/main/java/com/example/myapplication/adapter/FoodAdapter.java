@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,13 +43,19 @@ public abstract class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodV
     }
 
     public abstract void onEndOfScreenViewed();
+    public abstract void onFoodDetails(Food food);
 
     void bind (FoodViewHolder holder, Food food){
     holder.tvNAME.setText(food.getName());
     holder.TvPrice.setText("Price: " + String.valueOf(food.getPrice()));
     holder.tvDesc.setText(food.getDescription());
     Glide.with(holder.itemView.getContext()).load(food.getImageUrl()).apply(RequestOptions.bitmapTransform(new RoundedCorners(14))).into(holder.ivCover);
-
+    holder.ll_parent.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            onFoodDetails(food);
+        }
+    });
 }
 
     @Override
@@ -57,6 +64,7 @@ public abstract class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodV
     }
 
     class FoodViewHolder extends RecyclerView.ViewHolder{
+        LinearLayout ll_parent;
         TextView tvNAME,TvPrice, tvDesc;
         ImageView ivCover;
         public FoodViewHolder(@NonNull View itemView) {
@@ -65,6 +73,7 @@ public abstract class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodV
             TvPrice =  itemView.findViewById(R.id.tv_price);
             ivCover = itemView.findViewById(R.id.iv_cover);
             tvDesc = itemView.findViewById(R.id.tv_desc);
+            ll_parent = itemView.findViewById(R.id.ll_parent);
         }
     }
 }

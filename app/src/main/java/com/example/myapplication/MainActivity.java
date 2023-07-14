@@ -6,6 +6,8 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
@@ -25,7 +27,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private int page = 1;
     Retrofit retrofit;
@@ -58,10 +60,15 @@ public class MainActivity extends Activity {
                     }
                 }
 
-//                @Override
-//                public void onMovieDetails() {
-//
-//                }
+                @Override
+                public void onFoodDetails(Food food) {
+                    FragmentManager frgManager = getSupportFragmentManager();
+                    frgManager.beginTransaction()
+                            .add(R.id.fl_container, new FoodDetailsFragment(food))
+                            .addToBackStack(null)
+                            .commit();
+
+                }
             };
 
             rvFoods.setAdapter(foodAdapter);
@@ -108,6 +115,18 @@ public class MainActivity extends Activity {
         categories.add(new Category(4, "Pizza"));
         rvcategort.setAdapter(new CategoryAdapter(categories));
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager frgManager = getSupportFragmentManager();
+        if (frgManager.getBackStackEntryCount() > 0){
+            frgManager.popBackStackImmediate();
+
+            return;
+        }
+
+        super.onBackPressed();
     }
 }
 
