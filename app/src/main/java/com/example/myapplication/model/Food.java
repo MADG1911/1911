@@ -1,32 +1,50 @@
 package com.example.myapplication.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import com.google.gson.annotations.SerializedName;
+
+@Entity(tableName = "foods")
 public class Food {
-    private String food_name;
-    private Float time;
+    @PrimaryKey
+    private int id;
+    private String name;
+    @SerializedName("descrition")
+    private String description;
     private Float price;
+    @SerializedName("image")
     private String imageUrl;
 
-    public Food(String food_name, Float time, Float price, String imageUrl) {
-        this.food_name = food_name;
-        this.time = time;
+    public Food(String name, String description, Float price, String imageUrl) {
+        this.name = name;
+        this.description = description;
         this.price = price;
         this.imageUrl = imageUrl;
     }
 
-    public String getFood_name() {
-        return food_name;
+    public int getId() {
+        return id;
     }
 
-    public void setFood_name(String food_name) {
-        this.food_name = food_name;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Float getTime() {
-        return time;
+    public String getName() {
+        return name;
     }
 
-    public void setTime(Float time) {
-        this.time = time;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Float getPrice() {

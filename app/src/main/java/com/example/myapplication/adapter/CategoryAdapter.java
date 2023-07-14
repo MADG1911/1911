@@ -46,7 +46,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             tvtitle = itemView.findViewById(R.id.tv_title);
         }
             void bind(Category category){
-                tvtitle.setText(category.getTitle());
+                tvtitle.setText(category.getName());
             }
         }
     }

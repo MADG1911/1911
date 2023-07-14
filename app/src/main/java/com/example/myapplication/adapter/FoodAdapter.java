@@ -17,7 +17,7 @@ import com.example.myapplication.model.Food;
 
 import java.util.List;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder>{
+public abstract class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder>{
     List<Food> foods;
     public FoodAdapter(List<Food> foods){
         this.foods = foods;
@@ -34,10 +34,19 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
         bind(holder,foods.get(position));
+
+        if (position == getItemCount() - 1) {
+            onEndOfScreenViewed();
+        }
+
     }
-void bind (FoodViewHolder holder, Food food){
-    holder.tvNAME.setText(food.getFood_name());
-    holder.TvPrice.setText(String.valueOf(food.getPrice()));
+
+    public abstract void onEndOfScreenViewed();
+
+    void bind (FoodViewHolder holder, Food food){
+    holder.tvNAME.setText(food.getName());
+    holder.TvPrice.setText("Price: " + String.valueOf(food.getPrice()));
+    holder.tvDesc.setText(food.getDescription());
     Glide.with(holder.itemView.getContext()).load(food.getImageUrl()).apply(RequestOptions.bitmapTransform(new RoundedCorners(14))).into(holder.ivCover);
 
 }
@@ -48,13 +57,14 @@ void bind (FoodViewHolder holder, Food food){
     }
 
     class FoodViewHolder extends RecyclerView.ViewHolder{
-        TextView tvNAME,TvPrice, TVTime;
+        TextView tvNAME,TvPrice, tvDesc;
         ImageView ivCover;
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNAME = itemView.findViewById(R.id.tv_name);
             TvPrice =  itemView.findViewById(R.id.tv_price);
             ivCover = itemView.findViewById(R.id.iv_cover);
+            tvDesc = itemView.findViewById(R.id.tv_desc);
         }
     }
 }

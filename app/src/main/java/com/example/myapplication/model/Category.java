@@ -1,13 +1,12 @@
 package com.example.myapplication.model;
 
 public class Category {
-    private  int id;
-    private String title;
-
-    public Category(int id, String title) {
+    public Category(int id, String name) {
         this.id = id;
-        this.title = title;
+        this.name = name;
     }
+
+    private int id;
 
     public int getId() {
         return id;
@@ -17,11 +16,13 @@ public class Category {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
+
+    private String name;
 }

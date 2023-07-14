@@ -8,14 +8,9 @@ import retrofit2.http.Header;
 import retrofit2.http.Query;
 
 public interface MyApi {
-    @GET("categories/list")
-    Call<GetCategoriesResponse> getCategories(
-            @Header("X-RapidAPI-Key") String API_KEY
-    );
-
-    @GET("feeds/list")
+    @GET("foods")
     Call<GetFoodsResponse> getFoods(
-            @Header("X-RapidAPI-Key") String API_KEY
+            @Query("page") int page
     );
 
 }
