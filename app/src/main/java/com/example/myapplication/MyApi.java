@@ -8,9 +8,13 @@ import retrofit2.http.Header;
 import retrofit2.http.Query;
 
 public interface MyApi {
-    @GET("foods")
+    @GET("/foods")
     Call<GetFoodsResponse> getFoods(
             @Query("page") int page
+    );
+    @GET("/foods")
+    Call<GetFoodsResponse> getFoodsByTag(
+            @Query("tag") String tag
     );
 
 }

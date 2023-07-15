@@ -1,8 +1,10 @@
 package com.example.myapplication.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,8 +14,9 @@ import com.example.myapplication.R;
 import com.example.myapplication.model.Category;
 
 import java.util.List;
+import java.util.Locale;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+public abstract class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
     private List<Category> Categories;
     public CategoryAdapter(List<Category> Categories){
         this.Categories = Categories;
@@ -30,6 +33,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
         holder.bind(Categories.get(position));
+        holder.llCategory.setSelected(holder.llCategory.isSelected());
     }
 
     @Override
@@ -40,13 +44,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     class CategoryViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvtitle;
+        private LinearLayout llCategory;
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvtitle = itemView.findViewById(R.id.tv_title);
+            llCategory = itemView.findViewById(R.id.ll_category);
         }
             void bind(Category category){
-                tvtitle.setText(category.getName());
+            tvtitle.setText(category.getName());
             }
         }
     }

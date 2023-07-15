@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/purple_500">
+    android:background="@color/teal_200">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,26 +67,13 @@
 
             </RelativeLayout>
 
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:src="@android:drawable/ic_media_play"/>
-
         </FrameLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"
-            android:id="@+id/rv_genres"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="movie story:"
+            android:text="description:"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"

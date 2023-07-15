@@ -5,18 +5,22 @@ import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 @Entity(tableName = "foods")
-public class Food {
+public class Food implements Serializable {
     @PrimaryKey
     private int id;
+    @SerializedName("name")
     private String name;
     @SerializedName("descrition")
     private String description;
-    private Float price;
+    @SerializedName("price")
+    private int price;
     @SerializedName("image")
     private String imageUrl;
 
-    public Food(String name, String description, Float price, String imageUrl) {
+    public Food(String name, String description, int price, String imageUrl) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -47,11 +51,11 @@ public class Food {
         this.description = description;
     }
 
-    public Float getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

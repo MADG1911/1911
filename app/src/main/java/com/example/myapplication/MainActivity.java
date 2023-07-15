@@ -2,9 +2,14 @@ package com.example.myapplication;
 
 import static com.example.myapplication.Costant.BASE_URL;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -20,6 +25,7 @@ import com.example.myapplication.model.Food;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,11 +35,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+    List<Food> allFoods = new ArrayList<>();
+    List<Food> filteredFoods = new ArrayList<>();
+
+
     private int page = 1;
+    private EditText etSearch;
     Retrofit retrofit;
     private FoodAdapter foodAdapter;
     private RecyclerView rvFoods;
-    MyApi api;
+    private MyApi api;
     private AppDatabase db;
     List<Category> categories = new ArrayList<>();
     @Override
@@ -41,16 +52,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        init();
         fetchFoodsFromServer();
 
-        init();
-
     }
+    @SuppressLint("NotifyDataSetChanged")
     private void loadFoodsFromDb(){
         List<Food> dbFoods = db.foodDao().getAll();
 
+        allFoods.clear();
+        allFoods.addAll(dbFoods);
+
+        if (etSearch.getText().toString().isEmpty()) {
+            filteredFoods.clear();
+            filteredFoods.addAll(dbFoods);
+        }
+
+
         if (foodAdapter == null) {
-            foodAdapter = new FoodAdapter(dbFoods) {
+            foodAdapter = new FoodAdapter(filteredFoods) {
                 @Override
                 public void onEndOfScreenViewed() {
                     page++;
@@ -64,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onFoodDetails(Food food) {
                     FragmentManager frgManager = getSupportFragmentManager();
                     frgManager.beginTransaction()
-                            .add(R.id.fl_container, new FoodDetailsFragment(food))
+                            .add(R.id.fl_container, new FoodDetailFragment(food))
                             .addToBackStack(null)
                             .commit();
 
@@ -80,14 +100,18 @@ public class MainActivity extends AppCompatActivity {
     private void fetchFoodsFromServer() {
         api.getFoods(page).enqueue(new Callback<GetFoodsResponse>() {
             @Override
-            public void onResponse(Call<GetFoodsResponse> call, Response<GetFoodsResponse> response) {
-                List<Food> foods = response.body().getFoods();
-
-                db.foodDao().insert(foods);
+            public void onResponse(@NonNull Call<GetFoodsResponse> call, @NonNull Response<GetFoodsResponse> response) {
+                List<Food> foods = null;
+                if (response.body() != null) {
+                    foods = response.body().getFoods();
+                }
+                if (foods != null) {
+                    db.foodDao().insert(foods);
+                }
                 loadFoodsFromDb();
             }
             @Override
-            public void onFailure(Call<GetFoodsResponse> call, Throwable t) {
+            public void onFailure(@NonNull Call<GetFoodsResponse> call, Throwable t) {
                 loadFoodsFromDb();
             }
         });
@@ -105,15 +129,27 @@ public class MainActivity extends AppCompatActivity {
                         AppDatabase.class, "foods")
                 .allowMainThreadQueries()
                 .build();
-        RecyclerView rvcategort = findViewById(R.id.rv_category);
-        categories = new ArrayList<>();
-        categories.add(new Category(1, "All"));
-        categories.add(new Category(2, "Burger"));
-        categories.add(new Category(3, "Rice"));
-        categories.add(new Category(4, "Soup"));
-        categories.add(new Category(4, "Pasta"));
-        categories.add(new Category(4, "Pizza"));
-        rvcategort.setAdapter(new CategoryAdapter(categories));
+        etSearch = findViewById(R.id.et_search);
+
+        etSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String searchTerm = etSearch.getText().toString();
+
+                search(searchTerm);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
     }
 
@@ -128,6 +164,19 @@ public class MainActivity extends AppCompatActivity {
 
         super.onBackPressed();
     }
+
+    private void search(String searchTerm){
+        filteredFoods.clear();
+
+        for (int i=0 ; i< allFoods.size() ; i++){
+            if(allFoods.get(i).getName().toLowerCase().contains(searchTerm.toLowerCase())){
+                filteredFoods.add(allFoods.get(i));
+            }
+        }
+
+        foodAdapter.notifyDataSetChanged();
+    }
+
 }
 
 

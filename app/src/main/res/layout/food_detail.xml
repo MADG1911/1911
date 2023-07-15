@@ -10,19 +10,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="60dp"
     android:background="@color/text_color2"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:paddingTop="20dp">
-   <ImageView
-       android:id="@+id/Back_image"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-      android:src="@drawable/arrow"
-       android:tint="@color/text_color4"/>
 
    <com.google.android.material.imageview.ShapeableImageView
        android:layout_width="match_parent"
+       android:id="@+id/iv_cover"
        android:layout_height="370dp"
        android:src="@drawable/food_example"
        android:adjustViewBounds="true"
@@ -37,7 +33,7 @@
        android:layout_marginTop="20dp"
        android:layout_width="wrap_content"
        android:textStyle="bold"
-
+       android:id="@+id/tv_name"
        android:textColor="@color/text_color4"
        android:layout_height="wrap_content"
       android:text="Avocado salad"
@@ -47,6 +43,7 @@
        android:layout_marginTop="30dp"
        android:layout_width="wrap_content"
        android:textStyle="bold"
+       android:id="@+id/tv_desc"
        android:textColor="@color/text_color1"
        android:layout_height="wrap_content"
        android:text="Bright flavor and bold bites are what make this healthy quinoa salad with chickpeas, black beans, mango and avocado in a limey dressing an easy side"
@@ -67,10 +64,8 @@
           android:textColor="@color/text_color4"
           android:textSize="22dp"
           android:textStyle="bold"/>
-
       <TextView
-
-
+          android:id="@+id/tv_price"
           android:layout_width="wrap_content"
           android:textStyle="bold"
           android:textColor="@color/text_color1"
@@ -84,46 +79,6 @@
        android:layout_height="wrap_content"
        android:orientation="horizontal"
        android:layout_marginTop="20dp">
-   <TextView
-
-
-       android:layout_width="wrap_content"
-       android:textStyle="bold"
-       android:textColor="@color/text_color4"
-       android:layout_height="wrap_content"
-       android:text="Delivery Time"
-       android:textSize="22dp"
-
-       />
-   <ImageView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-      android:src="@drawable/time"
-     android:layout_marginLeft="10dp"
-       android:tint="@color/text_color1"
-       android:layout_gravity="bottom"
-       android:layout_marginBottom="3dp"/>
-      <TextView
-
-          android:layout_marginLeft="3dp"
-          android:layout_width="wrap_content"
-          android:textStyle="bold"
-          android:textColor="@color/text_color1"
-          android:layout_height="wrap_content"
-          android:text="10"
-          android:textSize="22dp"/>
-      <TextView
-
-          android:layout_marginLeft="3dp"
-          android:layout_width="wrap_content"
-          android:textStyle="bold"
-          android:textColor="@color/text_color1"
-          android:layout_height="wrap_content"
-          android:text="min"
-          android:textSize="22dp"/>
-
    </LinearLayout>
-
-
 </LinearLayout>
 </ScrollView>

@@ -18,6 +18,7 @@ public class LoginActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
        ImageView ivshowpassword = findViewById(R.id.iv_show_password);
         EditText etpassword = findViewById(R.id.et_password);
                ivshowpassword.setOnClickListener(new View.OnClickListener() {
